@@ -16,7 +16,7 @@ jobs:
         sonar.projectKey=WebGoatSonarQube2
   - task: Maven@4
     inputs:
-      mavenPomFile: 'pom.xml'
+      mavenPomFile: 'WebGoat/pom.xml'
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       javaHomeOption: 'JDKVersion'
