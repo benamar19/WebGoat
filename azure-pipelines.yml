@@ -1,3 +1,5 @@
+pool: agents-dev
+
 jobs:
 - job:
   displayName: SonarQube
