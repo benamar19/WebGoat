@@ -6,6 +6,10 @@ jobs:
     image: testing/maven:3.8.3-openjdk-17
     endpoint: asttsa-dev-acr
   steps:
+  - task: CmdLine@2
+    displayName: Git Clone
+    inputs:
+      script: 'git clone -b v2023.4 --single-branch https://github.com/WebGoat/WebGoat.git'
   - task: SonarQubePrepare@5
     inputs:
       SonarQube: 'sonarqube-dev1'
@@ -17,7 +21,7 @@ jobs:
         sonar.projectKey=WebGoatSonarQube2
   - task: Maven@4
     inputs:
-      mavenPomFile: '/pom.xml'
+      mavenPomFile: 'pom.xml'
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       javaHomeOption: 'JDKVersion'
