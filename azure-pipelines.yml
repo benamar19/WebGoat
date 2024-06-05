@@ -1,3 +1,6 @@
+trigger:
+- manual
+
 pool: agents-dev
 
 jobs:
